@@ -5,10 +5,21 @@
  */
 
 // Precarga la app
-self.__precacheManifest = [].concat(self.__precacheManifest || [])
-workbox.precaching.precacheAndRoute(self.__precacheManifest, {})
+self.__precacheManifest = [].concat(self.__precacheManifest || []);
+workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
 // App Shell
-workbox.routing.registerNavigationRoute('/index.html')
+workbox.routing.registerNavigationRoute("/index.html");
 
-workbox.routing.registerRoute(/^https?.*/, workbox.strategies.networkFirst(), 'GET')
+// La API usa Stale While Revalidate para mayor velocidad
+workbox.routing.registerRoute(
+  /^https?:\/\/www.themealdb.com\/api\/.*/,
+  new workbox.strategies.StaleWhileRevalidate()
+);
+
+// La API usa Stale While Revalidate para mayor velocidad
+
+workbox.routing.registerRoute(
+  /^https?.*/,
+  new workbox.strategies.NetworkFirst()
+);
