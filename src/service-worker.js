@@ -20,13 +20,26 @@ workbox.routing.registerRoute(
   new workbox.strategies.StaleWhileRevalidate()
 );
 
+// Last fuentes van con Cache First y vencen al mes
 workbox.routing.registerRoute(
   /^https:\/\/fonts.(?:googleapis|gstatic).com\/(.*)/,
   new workbox.strategies.CacheFirst({
     cacheName: 'google-fonts-cache',
     plugins: [
       new workbox.expiration.Plugin({
-        maxAgeSeconds: 24 * 60 * 60
+        maxAgeSeconds: 30 * 24 * 60 * 60
+      })
+    ]
+  })
+)
+
+workbox.routing.registerRoute(
+  /^https?:\/\/www.themealdb.com\/images\/media\/meals\/(.*)/,
+  new workbox.strategies.CacheFirst({
+    cacheName: 'image-cache',
+    plugins: [
+      new workbox.expiration.Plugin({
+        maxEntries: 20,
       })
     ]
   })
