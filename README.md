@@ -18,7 +18,7 @@ PWA que utiliza el API de MealDB para mostrar recetas con sus instrucciones. Alg
 5. Ejecutar `npm run build && npm start` para producción.
 6. Enjoy
 
-[DEMO LIVE]()
+[DEMO LIVE](https://pwa-recetas.hecto932.now.sh)
 
 ## Licencia
 
