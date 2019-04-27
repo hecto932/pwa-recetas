@@ -33,8 +33,9 @@ workbox.routing.registerRoute(
   })
 )
 
+// https://www.themealdb.com/images/media/meals/1550442508.jpg
 workbox.routing.registerRoute(
-  /^https?:\/\/www.themealdb.com\/images\/media\/meals\/(.*)/,
+  /^https?:\/\/www.themealdb.com\/images\/.*/,
   new workbox.strategies.CacheFirst({
     cacheName: 'image-cache',
     plugins: [
