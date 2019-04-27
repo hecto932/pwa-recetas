@@ -1,15 +1,24 @@
-# Curso de PWA con Recat en Platzi
+# platzi-recetas
 
-Este repositorio contiene todo el contenido del curso a medida que construimos una app para ver recetas con la API de MealDB.
+![captura de recetas](.readme-static/captura.png)
 
-Hay un branch por clase para que puedas navegar con facilidad el curso.
+PWA que utiliza el API de MealDB para mostrar recetas con sus instrucciones. Algunas de las features que tiene son:
+
+* Soporte Offline con workbox.
+* Estrategias de Red apropiadas para cada recurso.
+* Add to home screen.
+* Web Shared API
 
 ## ¿Como usar?
 
 1. Debes tener instalado `node.js v10`
 2. Clonar este repositorio en tu local
 3. Ejecutar en la raiz del proyecto `npm install`
-4. Enjoy
+4. Ejecutar `npm run dev` para desarollo
+5. Ejecutar `npm run build && npm start` para producción.
+6. Enjoy
+
+[DEMO LIVE]()
 
 ## Licencia
 
