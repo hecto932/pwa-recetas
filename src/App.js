@@ -9,6 +9,7 @@ import { createBrowserHistory } from 'history';
 
 // REACT GOOGLE ANALYTICS
 import ReactGA from 'react-ga';
+import IfOffline from './components/IfOffline';
 
 // CREANDO UNA HISTORIA EXTENDEMOS LOS METODOS DEL ROUTER
 const history = createBrowserHistory()
@@ -28,7 +29,7 @@ export default class App extends React.Component {
       <Router history={history}>
         <div>
           <header>
-            <Link to="/">Recetas</Link>
+            <Link to="/">Recetas <IfOffline>Offline</IfOffline></Link>
           </header>
 
           <main>
